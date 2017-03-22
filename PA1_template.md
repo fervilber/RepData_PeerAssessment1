@@ -76,7 +76,7 @@ With *summary(res_day)* we obtein this numbers and others.
     summary(res_day)
 ```
 
-The mean number of steps taken each day is `r summary(res_day)[4,2]` and the median number of steps is `r summary(res_day)[3,2]`.
+The mean number of steps taken each day is `r summary(res_day)[4,2]` :10766 and the median number of steps is `r summary(res_day)[3,2]`: 10765.
 
 
 ### Time series plot of the average number of steps taken
@@ -110,7 +110,7 @@ As we want to summarize a "normal" day, we take the mean of steps each **interva
     # calculate max interval for plotting issues
     max(agg_5min$steps)
     maxInterval <- agg_5min[ agg_5min$step == max( agg_5min$step ), 'interval']
-    
+    ## [1] 206.1698
     # Plot the average day
     plot(agg_5min$interval,agg_5min$steps,type = "l",
          col="tomato1", lwd=2,
@@ -121,6 +121,8 @@ As we want to summarize a "normal" day, we take the mean of steps each **interva
     # add text in max interval
     text(x=maxInterval+200, y=200, label="8:35 max step interval", cex = 0.6, col="blue")
 ```
+ [1] 206.1698
+
 ![Average total steps by 5 min interval](figure/t_steps_day.png)
 
 ### The 5-minute interval that, on average, contains the maximum number of steps
